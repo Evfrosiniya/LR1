@@ -3,7 +3,7 @@
 #include <time.h>
 #include <conio.h>
 
-int *Matrix;
+//int *Matrix;
 
 //void PrintMatrix(int *Matrix, int count) {
 //  int i;
