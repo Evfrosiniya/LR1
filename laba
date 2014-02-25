@@ -1,0 +1,50 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <conio.h>
+
+int *Matrix;
+
+void PrintMatrix(int *Matrix, int count) {
+  int i;
+  for(i = 0; i < count; i++) {
+    printf("%d", Matrix[i]);
+    printf("\t");
+  }
+  printf("\n\nAnswer:\n");
+}
+
+void GenerateMatrix(int **matrix, int count) {
+  int i = 0, j = 0;
+  srand((unsigned)time(0));
+  (*matrix) = (int *)malloc(count*sizeof(int));
+  for(i = 0; i < count; i++)
+    (*matrix)[i] = rand() % 100;
+} 
+
+void findodd(int *matrix, int count) {
+  int k = 0, i;
+  for (i = 0; i < count; i++)
+    if ((matrix[i] % 3 == 0) && (matrix[i] % 5 != 0)){
+      printf("%d\t",matrix[i]);
+      k++;
+    }
+    if (k == 0)
+      printf("No such numbers!");
+}
+
+void DestroyMatrix(int *matrix) {
+  free(matrix);
+}
+
+int main(){
+  int count;
+  printf("Enter the value of N: ");
+  scanf("%d", &count);
+  GenerateMatrix(&Matrix, count);
+  printf("\nInitial array: \n");
+  PrintMatrix(Matrix, count);
+  findodd(Matrix, count);
+  _getch();
+  return 0;
+}
