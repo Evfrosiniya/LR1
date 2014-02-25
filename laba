@@ -5,14 +5,14 @@
 
 int *Matrix;
 
-void PrintMatrix(int *Matrix, int count) {
-  int i;
-  for(i = 0; i < count; i++) {
-    printf("%d", Matrix[i]);
-    printf("\t");
-  }
-  printf("\n\nAnswer:\n");
-}
+//void PrintMatrix(int *Matrix, int count) {
+//  int i;
+//  for(i = 0; i < count; i++) {
+//    printf("%d", Matrix[i]);
+//    printf("\t");
+//  }
+//  printf("\n\nAnswer:\n");
+//}
 
 void GenerateMatrix(int **matrix, int count) {
   int i = 0, j = 0;
